@@ -1,0 +1,125 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* main.css */
+.carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+}
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+}
+.card img {
+  border-bottom: 1px solid #e0e0e0;
+}
+.card-body {
+  background-color: #ffffff;
+}
+.btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-primary:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.content {
+  flex: 1;
+  margin-top: 60px; /* Espacio para el header fijo */
+}
+
+/* Estilos del contenido principal */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.product-list {
+  width: 70%;
+}
+
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.price {
+  color: #6a4f8a;
+}
+
+/* Estilos del carrito */
+.cart {
+  width: 25%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+}
+
+#total-price {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode header {
+  background-color: #555;
+}
+
+body.dark-mode header h1 {
+  color: #ddd;
+}
+
+body.dark-mode .product {
+  background-color: #444;
+  border-color: #666;
+}
+
+body.dark-mode .price {
+  color: #9b5eae;
+}
+
+body.dark-mode .cart {
+  background-color: #444;
+  border-color: #666;
+}
+
+body.dark-mode button {
+  background-color: #9b5eae;
+}
+
+body.dark-mode button:hover {
+  background-color: #7b4d8e;
+}

@@ -1,5 +1,5 @@
 <?php
-    include("db.php");
+    include("../db/db.php");
     $db = new Database();
     $con = $db->conectar();
     $email ="";
@@ -12,12 +12,12 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" type="text/css" href="Style/estilos1.css">   
 </head>
     <body>
-        <div style="margin-top:10%">
+        <div>
             <form method="post" enctype="multipart/form-data" action="comprobarlogin.php">
                 <p>E-mail <br><input name="email" id="email" type="email" required placeholder="email@email.com"></p>
                 <p>Contraseña <br><input name="contraseña" id="contraseña" type="password" required></p>
                 <input type="submit">
-                <p>¿No tienes una cuenta aun? <a href="formulario.php">¡Registrate!</a></p>
+                <p>¿No tienes una cuenta aun? <a href="../register/register.php">¡Registrate!</a></p>
             </form>';
             
             if(isset($_GET['fallo'])){
