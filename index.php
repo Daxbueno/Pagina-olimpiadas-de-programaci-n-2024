@@ -91,32 +91,6 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/tenis.jpeg" class="card-img-top" alt="Producto 2">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 2</h5>
-                    <p class="card-text">Descripción breve del producto 2.</p>
-                    <p>$2 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="2">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/hockey.jpeg" class="card-img-top" alt="Producto 3">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 3</h5>
-                    <p class="card-text">Descripción breve del producto 3.</p>
-                    <p>$5 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="5">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Añadir más tarjetas aquí -->
     </div>
 </section>
