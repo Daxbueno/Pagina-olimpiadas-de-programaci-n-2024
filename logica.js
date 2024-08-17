@@ -1,4 +1,4 @@
-// Variables globales para el carrito
+// Variables globales para el carritooooo
 let cart = {};
 
 // Función para agregar productos al carrito
