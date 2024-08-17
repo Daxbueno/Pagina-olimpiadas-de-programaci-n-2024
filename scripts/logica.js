@@ -10,6 +10,7 @@ function addToCart(product) {
     } else {
         cart[productName] = {
             quantity: 1,
+            name: product.name,
             idProducto: product.idProducto, // Añadiendo idProducto
             price: product.price,
             totalPrice: product.price
