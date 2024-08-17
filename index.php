@@ -12,6 +12,19 @@ $sql->execute();
 
 $response = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+session_start();
+    if (isset($_SESSION["loggedin"])){
+        if ($_SESSION["loggedin"] == true){
+            $usuariologeado = $_SESSION["email"];
+        }
+        else{
+            header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+        }
+    }
+    else{
+        header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+    }
+
 ?>
  
 <!DOCTYPE html>
@@ -30,7 +43,7 @@ $response = $sql->fetchAll(PDO::FETCH_ASSOC);
     <!-- Header -->
     <header class="container-fluid header">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="#" class="d-flex align-items-center">
+            <a href="scripts/logout.php" class="d-flex align-items-center">
                 <img src="media/nadia.jpeg" alt="Logo" class="header-logo">
             </a>
             <form class="form-inline mx-auto position-relative">
