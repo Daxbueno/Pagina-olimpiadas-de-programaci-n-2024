@@ -72,13 +72,11 @@ session_start();
 
 
         <!-- Product Cards (Responsive) -->
-<section class="container my-4">
-    <div class="row">
-        <!-- Card Example (Repeat as needed) -->
+<section>
+    <div class="container-products">
         <?php
         $cardsProductos->generarCardsProductos($con);
         ?>
-        <!-- Añadir más tarjetas aquí -->
     </div>
 </section>
 

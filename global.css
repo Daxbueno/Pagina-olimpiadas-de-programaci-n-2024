@@ -3,6 +3,7 @@
 :root {
   --color-primary: #ff4500;
   --padding-section: 20px;
+  --radius: 15px;
 }
 
 * {
@@ -53,19 +54,6 @@ button {
   font-size: 14px;
 }
 
-/* slider */
-
-.swiper {
-  height: 80vh;
-}
-
-.swiper img {
-  height: 100%;
-  width: 100%;
-  object-position: top;
-  object-fit: cover;
-}
-
 /* footer.css */
 .footer {
   background-color: #ffffff;
@@ -86,57 +74,6 @@ button {
 }
 
 /* Footer Styles */
-.footer {
-  background-color: #ffffe0; /* Amarillo pálido */
-  padding: 10px 0;
-  border-top: 5px solid #8a2be2; /* Azul violeta */
-}
-.footer-link {
-  text-decoration: none;
-  color: #32cd32; /* Verde limón */
-  display: block;
-}
-.footer-link:hover {
-  color: #ff6347; /* Tomate */
-}
-.footer p {
-  margin: 0;
-  font-size: 18px;
-  color: #ff4500; /* Naranja rojo */
-}
-
-/* Main Content Styles */
-
-.carousel-item img {
-  max-height: 500px;
-  object-fit: cover;
-}
-
-.card {
-  border-radius: 0; /* Sin bordes redondeados */
-  overflow: hidden;
-  border: 3px dashed #ff00ff; /* Magenta */
-  background-color: #ffebcd; /* Blanco de campo */
-}
-.card img {
-  border-bottom: 3px dashed #ff00ff; /* Magenta */
-}
-.card-body {
-  background-color: #e0ffff; /* Azul claro */
-  color: #ff4500; /* Naranja rojo */
-}
-.btn-primary {
-  background-color: #00ff00; /* Verde neón */
-  border-color: #00ff00; /* Verde neón */
-}
-.btn-primary:hover {
-  background-color: #00ff7f; /* Verde claro */
-  border-color: #00ff7f; /* Verde claro */
-}
-.content {
-  flex: 1;
-  margin-top: 80px; /* Espacio extra para el header feo */
-}
 
 /*---FORMULARIO---*/
 
@@ -145,7 +82,7 @@ button {
   flex-direction: column;
   padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.059);
   background-color: #fff;
   max-width: 350px;
 }
