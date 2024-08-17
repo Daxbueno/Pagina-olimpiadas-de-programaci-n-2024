@@ -2,7 +2,7 @@
 // auth.php
 session_start();
 
-include("db.php");
+include("../db/db.php");
 $db = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Las credenciales son válidas, iniciar sesión
         $_SESSION["loggedin"] = true;
         $_SESSION["email"] = $email;
-        header("Location: index.php"); // Redirigir a la página protegida
+        header("Location: ../index.php"); // Redirigir a la página protegida
         exit();
     } else {
         header("Location: login.php?fallo=1"); // Redirigir a la página protegida

@@ -12,6 +12,19 @@ $sql->execute();
 
 $response = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+session_start();
+    if (isset($_SESSION["loggedin"])){
+        if ($_SESSION["loggedin"] == true){
+            $usuariologeado = $_SESSION["email"];
+        }
+        else{
+            header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+        }
+    }
+    else{
+        header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+    }
+
 ?>
  
 <!DOCTYPE html>
@@ -151,7 +164,7 @@ $response = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="logica.js"></script>
+    <script src="scripts/logica.js"></script>
 </html>
 
 <!--
