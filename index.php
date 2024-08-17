@@ -1,16 +1,13 @@
 <?php
 
 include("db/db.php");
+include("scripts/generarCardsProductos.php");
 
 $db = new Database();
 
 $con = $db->conectar();
 
-$sql = $con->prepare("select * from usuarios");
-
-$sql->execute();
-
-$response = $sql->fetchAll(PDO::FETCH_ASSOC);
+$cardsProductos = new CardsProductos();
 
 session_start();
     if (isset($_SESSION["loggedin"])){
@@ -50,7 +47,7 @@ session_start();
                 <i class="fas fa-search search-icon"></i>
                 <input class="form-control" type="search" placeholder="Buscar productos" aria-label="Buscar">
             </form> 
-            <a href="#" class="btn btn">
+            <a class="btn btn">
                 <i class="fas fa-shopping-cart fa-2x"></i>
             </a>
         </div>
@@ -94,45 +91,9 @@ session_start();
 <section class="container my-4">
     <div class="row">
         <!-- Card Example (Repeat as needed) -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/football.jpeg" class="card-img-top" alt="Producto 1">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 1</h5>
-                    <p class="card-text">Descripción breve del producto 1.</p>
-                    <p>$4 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="4">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/tenis.jpeg" class="card-img-top" alt="Producto 2">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 2</h5>
-                    <p class="card-text">Descripción breve del producto 2.</p>
-                    <p>$2 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="2">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/hockey.jpeg" class="card-img-top" alt="Producto 3">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 3</h5>
-                    <p class="card-text">Descripción breve del producto 3.</p>
-                    <p>$5 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="5">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        $cardsProductos->generarCardsProductos($con);
+        ?>
         <!-- Añadir más tarjetas aquí -->
     </div>
 </section>
@@ -208,7 +169,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="logica.js"></script>
+    <script src="scripts/logica.js"></script>
 </html>
 
 <!--
