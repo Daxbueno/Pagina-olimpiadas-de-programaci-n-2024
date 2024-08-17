@@ -1,16 +1,13 @@
 <?php
 
 include("db/db.php");
+include("scripts/generarCardsProductos.php");
 
 $db = new Database();
 
 $con = $db->conectar();
 
-$sql = $con->prepare("select * from usuarios");
-
-$sql->execute();
-
-$response = $sql->fetchAll(PDO::FETCH_ASSOC);
+$cardsProductos = new CardsProductos();
 
 session_start();
     if (isset($_SESSION["loggedin"])){
@@ -78,19 +75,9 @@ session_start();
 <section class="container my-4">
     <div class="row">
         <!-- Card Example (Repeat as needed) -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="media/football.jpeg" class="card-img-top" alt="Producto 1">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 1</h5>
-                    <p class="card-text">Descripción breve del producto 1.</p>
-                    <p>$4 USD.</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary" data-price="4">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        $cardsProductos->generarCardsProductos($con);
+        ?>
         <!-- Añadir más tarjetas aquí -->
     </div>
 </section>
@@ -134,11 +121,7 @@ session_start();
 
 
 </body>
-
-
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="scripts/logica.js"></script>
+  <script src="scripts/logica.js"></script>
 </html>
 
 <!--
