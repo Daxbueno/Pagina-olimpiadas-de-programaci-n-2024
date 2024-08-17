@@ -4,6 +4,7 @@
   --color-primary: #ff4500;
   --padding-section: 20px;
   --radius: 15px;
+  --max-width: 1200px;
 }
 
 * {
@@ -26,25 +27,31 @@ button {
   all: unset;
 }
 
-/* header.css */
+/* content-header.css */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #ffffff;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: var(--max-width);
+  margin: auto;
   padding: 15px var(--padding-section);
 }
 
-.header .container-logo .logo {
+.content-header .container-logo .logo {
   height: 30px;
 }
 
-.header .buscador {
+.content-header .buscador {
   display: flex;
   align-items: center;
   gap: 5px;
