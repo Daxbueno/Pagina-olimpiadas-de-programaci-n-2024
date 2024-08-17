@@ -161,7 +161,6 @@ session_start();
 
 
 
-          <!-- 
 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -180,11 +179,12 @@ session_start();
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Pagar</button>
+                <form id="formProductos" action="scripts/procesarPedido.php" method="POST">
+                    <input type="hidden" id="productos" name="productos">
+                    <button type="button" onclick="enviarProductos()">Enviar Productos</button>
+                </form>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
-
-          -->
