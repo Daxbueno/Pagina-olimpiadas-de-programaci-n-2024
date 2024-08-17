@@ -158,7 +158,10 @@ session_start();
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Pagar</button>
+                <form id="formProductos" action="procesar.php" method="POST">
+                    <input type="hidden" id="productos" name="productos">
+                    <button type="button" class="btn btn-primary" onclick="enviarProductos()">Generar pedido</button>
+                </form>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>

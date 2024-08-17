@@ -10,10 +10,15 @@ function addToCart(product) {
     } else {
         cart[productName] = {
             quantity: 1,
+            idProducto: product.idProducto, // Añadiendo idProducto
             price: product.price,
             totalPrice: product.price
         };
     }
+    
+    // Mostrar en la consola el ID del producto añadido
+    console.log(`Producto añadido al carrito: ${productName} (ID: ${product.idProducto})`);
+    
     updateCart();
 }
 
@@ -51,7 +56,9 @@ function attachQuantityChangeEvents() {
     document.querySelectorAll('.increase').forEach(button => {
         button.addEventListener('click', (event) => {
             const productName = button.getAttribute('data-name');
-            addToCart({ name: productName, price: cart[productName].price });
+            cart[productName].quantity++;
+            cart[productName].totalPrice = cart[productName].price*cart[productName].quantity
+            updateCart();
         });
     });
 
@@ -60,7 +67,7 @@ function attachQuantityChangeEvents() {
             const productName = button.getAttribute('data-name');
             if (cart[productName].quantity > 1) {
                 cart[productName].quantity -= 1;
-                cart[productName].totalPrice -= cart[productName].price;
+                cart[productName].totalPrice = cart[productName].price*cart[productName].quantity;
                 updateCart();
             } else {
                 delete cart[productName];
@@ -81,9 +88,16 @@ document.querySelectorAll('.btn-primary').forEach(button => {
         event.preventDefault();
         const productName = button.closest('.card').querySelector('.card-title').innerText;
         const productPrice = parseFloat(button.getAttribute('data-price'));
-        addToCart({ name: productName, price: productPrice });
+        const productId = button.getAttribute('data-id'); // Asumiendo que el ID está en un atributo data-id
+        addToCart({ name: productName, price: productPrice, idProducto: productId });
     });
 });
 
 // Evento para el carrito en el header
 document.querySelector('.fa-shopping-cart').addEventListener('click', openCart);
+
+function enviarProductos() {
+    const productosJSON = JSON.stringify(cart);
+    document.getElementById('productos').value = productosJSON;
+    document.getElementById('formProductos').submit(); // Envía el formulario
+}

@@ -14,7 +14,8 @@ class CardsProductos {
             <p class="card-text"><?php echo htmlspecialchars($row['descripcion']); ?></p>
             <p><?php echo htmlspecialchars($row['precio']); ?> USD</p>
             <div class="text-center">
-              <a class="btn btn-primary" data-price="<?php echo htmlspecialchars($row['precio']); ?>">Comprar</a>
+              <botton class="btn btn-primary" data-price="<?php echo htmlspecialchars($row['precio']); ?>" 
+              data-id="<?php echo htmlspecialchars($row['idProducto']); ?>">Comprar</botton>
             </div>
           </div>
         </div>
