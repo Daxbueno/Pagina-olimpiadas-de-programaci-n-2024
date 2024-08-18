@@ -5,7 +5,7 @@ class Componentes {
     ?>
       <div class="card-product">
         <div class="card-product-img">
-          <img src="media/hockey.jpeg"/>
+          <img src="<?php echo htmlspecialchars($row['imagen']); ?>"/>
         </div>
         <div class="card-product-info">
           <div>
