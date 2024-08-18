@@ -35,13 +35,13 @@ function updateCart() {
     let total = 0;
     for (const [name, details] of Object.entries(cart)) {
         cartItems.innerHTML += `
-            <div class="cart-item d-flex justify-content-between mb-2">
+            <div class="">
                 <span>${name}</span>
-                <div class="d-flex align-items-center">
-                    <button class="btn btn-secondary btn-sm decrease" data-name="${name}">-</button>
-                    <span class="mx-2">${details.quantity}</span>
-                    <button class="btn btn-secondary btn-sm increase" data-name="${name}">+</button>
-                    <span class="mx-2">${details.totalPrice.toFixed(2)} $</span>
+                <div class="">
+                    <button class="" data-name="${name}">-</button>
+                    <span class="">${details.quantity}</span>
+                    <button class="" data-name="${name}">+</button>
+                    <span class="">${details.totalPrice.toFixed(2)} $</span>
                 </div>
             </div>
         `;
