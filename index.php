@@ -1,5 +1,4 @@
 <?php
-
 include("db/db.php");
 include("scripts/componentes.php");
 
@@ -29,18 +28,18 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Deportes al Aire Libre</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/global.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
   <?php 
-  $componentes->getHeader();
-  $componentes->getSlider();
+  include("components/header.php");
+  include("components/slider.php");
   ?>
   <section>
     <div class="container-products">
@@ -59,7 +58,7 @@ else{
     </div>
   </section>
   <?php
-  $componentes->getFooter();
+  include("components/footer.php");
   ?>
  
   <script src="scripts/carrito.js"></script>
