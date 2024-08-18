@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_POST['productos'])) {
+    header("Location: ../index.php");
+    exit();
+}
 include("../db/db.php");
 $db = new Database();
 $idUsuario = 2;
@@ -22,15 +26,12 @@ function getDateForDatabase(): string {
     return $date_formated;
 }
 
-/*if (isset($_POST['productos'])) {
-    $productos = json_decode($_POST['productos'], true);
-    foreach ($productos as $producto) {
-        $name = $producto['name'];
-        $idProducto = $producto['idProducto'];
-        $cantidad = $producto['quantity'];
-    }
-} else {
-    header("Location: ../login/login.php");
-    exit();
-}*/
+
+$productos = json_decode($_POST['productos'], true);
+foreach ($productos as $producto) {
+    $name = $producto['name'];
+    $idProducto = $producto['idProducto'];
+    $cantidad = $producto['quantity'];
+}
+
 ?>
