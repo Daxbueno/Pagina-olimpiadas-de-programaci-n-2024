@@ -7,12 +7,11 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Logeo</title>
-  <link rel="stylesheet" type="text/css" href="../global.css">
-  <link rel="stylesheet" type="text/css" href="login.css">
-
-</head>
+  <head>
+    <title>Logeo</title>
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+  </head>
   <body>
     <section class="container">
       <form method="post" enctype="multipart/form-data" action="comprobarlogin.php" class="form">
