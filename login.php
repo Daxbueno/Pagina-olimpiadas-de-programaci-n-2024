@@ -1,5 +1,5 @@
 <?php
-    include("../db/db.php");
+    include("db/db.php");
     $db = new Database();
     $con = $db->conectar();
     $email ="";
