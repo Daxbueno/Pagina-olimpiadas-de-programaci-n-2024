@@ -14,11 +14,11 @@ if (isset($_SESSION["loggedin"])){
     $usuariologeado = $_SESSION["email"];
   }
   else{
-    header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+    header("Location: login.php?fallo=2"); // Redirigir a la página protegida
   }
 }
 else{
-  header("Location: login/login.php?fallo=2"); // Redirigir a la página protegida
+  header("Location: login.php?fallo=2"); // Redirigir a la página protegida
 }
 ?>
  

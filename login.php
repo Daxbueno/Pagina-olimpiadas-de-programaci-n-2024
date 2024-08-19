@@ -23,16 +23,16 @@
         <button type="submit">Iniciar sesión</button>
         <p>¿No tienes una cuenta aun? <a href="register.php">¡Registrate!</a></p>
       </form>
-    </section>
       <?php 
         if(isset($_GET['fallo'])){
           if($_GET['fallo']==1){
-            echo '<p style="color:red;">Contraseña o mail incorrectos</p>';
+            echo '<p style="color:red; margin-top:1em;">Contraseña o mail incorrectos</p>';
           }
           if($_GET['fallo']==2){
-            echo '<p style="color:crimson;">No se inicio sesión</p>';
+            echo '<p style="color:crimson;margin-top: 1em;">No se inicio sesión</p>';
           }
         }
       ?>
+    </section>
     </body>
 </html>

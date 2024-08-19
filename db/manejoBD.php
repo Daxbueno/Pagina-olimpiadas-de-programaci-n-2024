@@ -24,7 +24,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && ($ID == -1)) {
   $response = $sql->fetchAll(PDO::FETCH_ASSOC);
   if ($response) {
     $_SESSION["email"] = $email;
-    header("Location: ../register/register.php?fallo=1");
+    header("Location: ../register.php?fallo=1");
     exit();
   }
 }
@@ -37,7 +37,7 @@ else{
 
 
 // Si no hay una ID, redirigimos a login.php
-header("Location: ../login/login.php");
+header("Location: ../login.php");
 ob_end_flush(); // Liberar el buffer de salida antes de redirigir
 
 

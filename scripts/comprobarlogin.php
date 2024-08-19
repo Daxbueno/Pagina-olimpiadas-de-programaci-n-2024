@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../index.php"); // Redirigir a la página protegida
         exit();
     } else {
-        header("Location: login.php?fallo=1"); // Redirigir a la página protegida
+        header("Location: ../login.php?fallo=1"); // Redirigir a la página protegida
     }
 
     mysqli_close($con);
