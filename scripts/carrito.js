@@ -3,6 +3,7 @@ window.onload = function () {
 
   document.querySelectorAll(".add-carrito").forEach((button) => {
     button.addEventListener("click", (event) => {
+      console.log("Se hizo click")
       event.preventDefault();
       const productName = button.getAttribute("data-name");
       const productPrice = parseFloat(button.getAttribute("data-price"));
@@ -69,3 +70,4 @@ function obtenerTotalQuantitys(pedidos) {
   });
   return total;
 }
+
