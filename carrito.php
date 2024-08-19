@@ -14,6 +14,12 @@
   ?>
   <section>
     <h1>Carrito</h1>
+    <section class="section-carrito">
+      <div class="list-carrito">
+
+      </div>
+    </section>
+    <script src="scripts/carrito.js"></script>
   </section>
 </body>
 </html>

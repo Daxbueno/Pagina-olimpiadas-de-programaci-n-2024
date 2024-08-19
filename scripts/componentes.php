@@ -17,8 +17,8 @@ class Componentes {
           <div class="container-precio">
             <h5 class="text-precio">Precio</h5>
             <p class="precio"><?php echo htmlspecialchars($row['precio']); ?> USD</p>
-            <botton class="boton" data-name="<?php echo htmlspecialchars($row['nombre']); ?>" data-price="<?php echo htmlspecialchars($row['precio']); ?>" 
-            data-id="<?php echo htmlspecialchars($row['idProducto']); ?>">Añadir al carrito</botton>
+            <button class="add-carrito" data-name="<?php echo htmlspecialchars($row['nombre']); ?>" data-price="<?php echo htmlspecialchars($row['precio']); ?>" 
+            data-id="<?php echo htmlspecialchars($row['idProducto']); ?>" data-image="<?php echo htmlspecialchars($row['imagen']); ?>">Añadir al carrito</button>
           </div>
         </div>
       </div>

@@ -1,11 +1,26 @@
 window.onload = function () {
   actualizarCarrito();
+
+  document.querySelectorAll(".add-carrito").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const productName = button.getAttribute("data-name");
+      const productPrice = parseFloat(button.getAttribute("data-price"));
+      const productId = button.getAttribute("data-id");
+      const productImage = button.getAttribute("data-image");
+      addToCart({
+        name: productName,
+        price: productPrice,
+        idProducto: productId,
+        image: productImage,
+      });
+    });
+  });
 };
 
 if (!localStorage.getItem("pedidos-carrito")) {
   localStorage.setItem("pedidos-carrito", JSON.stringify([]));
 }
-let cart = {};
 function updateLocalStorage(producto) {
   pedidos.push(producto);
 }
@@ -24,6 +39,7 @@ function addToCart(product) {
       totalPrice: product.price,
       quantity: 1,
       price: product.price,
+      image: product.image,
     };
     pedidos.push(product);
   } else {
@@ -53,17 +69,3 @@ function obtenerTotalQuantitys(pedidos) {
   });
   return total;
 }
-
-document.querySelectorAll(".card-product .boton").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    const productName = button.getAttribute("data-name");
-    const productPrice = parseFloat(button.getAttribute("data-price"));
-    const productId = button.getAttribute("data-id"); // Asumiendo que el ID está en un atributo data-id
-    addToCart({
-      name: productName,
-      price: productPrice,
-      idProducto: productId,
-    });
-  });
-});
