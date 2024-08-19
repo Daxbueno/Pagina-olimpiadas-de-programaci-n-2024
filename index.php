@@ -60,8 +60,7 @@ else{
   <?php
   include("components/footer.php");
   ?>
- 
-  <script src="scripts/carrito.js"></script>
-</body>
+ <script src="scripts/carrito.js"></script>
+ </body>
 </html>
 
